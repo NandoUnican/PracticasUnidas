@@ -75,7 +75,7 @@ public class CodificaPractica {
 		return mejorCaso/100;
 	}
 	
-	public double retornaPeroCaso() {
+	public double retornaPeorCaso() {
 		return peorCaso/100;
 	}
 	
