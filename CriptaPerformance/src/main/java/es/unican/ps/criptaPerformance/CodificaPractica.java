@@ -1,5 +1,7 @@
 package es.unican.ps.criptaPerformance;
 
+import java.util.ArrayList;
+
 import jcrypta.Jcripta;
 
 public class CodificaPractica {
@@ -16,6 +18,7 @@ public class CodificaPractica {
 	long tiempo_inicial, duracion;
 	// Establece por defecto el numero de iteraciones al crear un objeto de la clase
 	private int numIteraciones;
+	private ArrayList<Double> array = new ArrayList<Double>();// Array para calcular el percentil
 	
 	/**
 	 * Constructor de la clase CodificaPractica
@@ -26,7 +29,7 @@ public class CodificaPractica {
 		this.tiempoPromedio=0.0;// Se inician a 0 las variables para usarlas más adelante
 		this.desviacionEstandar=0.0;
 		this.percentil99=0.0;
-		this.numIteraciones=1000;// Se va a ejecutar 1000 por defecto para calcular los valores
+		this.numIteraciones=1000;// Se va a ejecutar 100 por defecto para calcular los valores
 	}
 	
 	/**
@@ -41,6 +44,7 @@ public class CodificaPractica {
 			tiempo_inicial = System.currentTimeMillis();
 			criptaLink.crypta(clave,sal);
 			duracion = System.currentTimeMillis() - tiempo_inicial;
+			array.add((double) duracion/100);
 			tiempoPromedio+=duracion;//Se van acumulando todas las duraciones para dividirlas despues por el numero de iteraciones
 			if(duracion < mejorCaso) {
 				mejorCaso = duracion;// Si el tiempo de esta iteracion es menor al del mejor caso se establece como mejor caso
@@ -68,6 +72,23 @@ public class CodificaPractica {
 	}
 	
 	/**
+	 * Calcula el percentil 99, para ello se usa un array auxiliar para guardar todas las duraciones y se ordenan con un algoritmo de burbuja
+	 */
+	public void calculaPercentil99() {
+		//Se usa un algoritmo tipo burbuja para ordenar los tiempos y así sacar el que se corresponde con el percentil(en este caso el 990)
+		for(int i=0; i<=array.size()-2; i++) {
+			for(int j=array.size()-1; j>i;j--) {
+				if(array.get(j-1) > array.get(j)) {
+					double temp = array.get(j-1);
+					array.set(j-1, array.get(j));
+					array.set(j, temp);
+				}
+			}
+		}
+		percentil99 = array.get(990);//El que marca el 99% en este caso es el 990(1000 iteraciones) 
+	}
+	
+	/**
 	 * Observadores para devolver todos los valores calculados
 	 * @return valor calculado
 	 */
@@ -88,6 +109,6 @@ public class CodificaPractica {
 	}
 	
 	public double retornaPercentil99() {
-		return percentil99/100;
+		return percentil99;
 	}
 }
