@@ -1,6 +1,7 @@
 package es.unican.ps.criptaPerformance;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import jcrypta.Jcripta;
 
@@ -33,7 +34,7 @@ public class CodificaPractica {
 	}
 	
 	/**
-	 * Metodo que calcula todos los valores indicados en la practica(mejorCaso, peorCaso y media)
+	 * Metodo que calcula todos los valores indicados en la practica(mejorCaso, peorCaso, media, desviación y percentil 99)
 	 */
 	public void calculaValores() {
 		// Se van a ejecutar todas las iteraciones con los mismos valores
@@ -53,40 +54,15 @@ public class CodificaPractica {
 			}
 		}
 		tiempoPromedio=tiempoPromedio/numIteraciones;//Establece el tiempo promedio
-	}
-	
-	
-	public void calculaDesviacionEstandar() {
-		// Se van a ejecutar todas las iteraciones con los mismos valores
-		Jcripta criptaLink = new Jcripta(); 
-		clave = new String("Clave");
-		sal   = new String("Sal");
-		double prom = retornaTiempoPromedio();// Obtiene el tiempo promedio
-		for (int i = 0; i < numIteraciones; i++ ) {
-			tiempo_inicial = System.currentTimeMillis();
-			criptaLink.crypta(clave,sal);
-			duracion = System.currentTimeMillis() - tiempo_inicial;
-		    desviacionEstandar += Math.pow ( duracion - prom, 2 );// Acumula la varianza
+		for (int i = 0; i < numIteraciones-1; i++ ) {
+		    desviacionEstandar += Math.pow ( array.get(i) - tiempoPromedio, 2 );// Acumula la varianza
 		}
 		desviacionEstandar = Math.sqrt(desviacionEstandar/numIteraciones);// Calcula la desviacion a partir de la varianza acumulada 
+		
+		Collections.sort(array);// Ordena el array
+		percentil99 = array.get(numIteraciones*99/100);//El que marca el 99% en este caso es el 990(1000 iteraciones)
 	}
 	
-	/**
-	 * Calcula el percentil 99, para ello se usa un array auxiliar para guardar todas las duraciones y se ordenan con un algoritmo de burbuja
-	 */
-	public void calculaPercentil99() {
-		//Se usa un algoritmo tipo burbuja para ordenar los tiempos y así sacar el que se corresponde con el percentil(en este caso el 990)
-		for(int i=0; i<=array.size()-2; i++) {
-			for(int j=array.size()-1; j>i;j--) {
-				if(array.get(j-1) > array.get(j)) {
-					double temp = array.get(j-1);
-					array.set(j-1, array.get(j));
-					array.set(j, temp);
-				}
-			}
-		}
-		percentil99 = array.get(990);//El que marca el 99% en este caso es el 990(1000 iteraciones) 
-	}
 	
 	/**
 	 * Observadores para devolver todos los valores calculados
