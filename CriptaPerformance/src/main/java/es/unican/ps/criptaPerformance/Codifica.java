@@ -18,11 +18,11 @@ public class Codifica {
 	public static void main(String[] args) {
 		CodificaPractica pc = new CodificaPractica();
 		pc.calculaValores();
-		System.out.println("Mejor caso: "+pc.retornaMejorCaso()+" segundos.");
-		System.out.println("Peor caso: "+pc.retornaPeorCaso()+" segundos.");
-		System.out.println("Tiempo promedio: "+pc.retornaTiempoPromedio()+" segundos.");
-		System.out.println("Desviación estandar: "+pc.retornaDesviacionEstandar()+" segundos.");
-		System.out.println("Percentil 99: "+pc.retornaPercentil99()+" segundos.");
+		System.out.println("Mejor caso: "+pc.retornaMejorCaso()+" milisegundos.");
+		System.out.println("Peor caso: "+pc.retornaPeorCaso()+" milisegundos.");
+		System.out.println("Tiempo promedio: "+pc.retornaTiempoPromedio()+" milisegundos.");
+		System.out.println("Desviación estandar: "+pc.retornaDesviacionEstandar()+" milisegundos.");
+		System.out.println("Percentil 99: "+pc.retornaPercentil99()+" milisegundos.");
 	}
 	  
 }

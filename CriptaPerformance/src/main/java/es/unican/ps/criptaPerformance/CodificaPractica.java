@@ -45,7 +45,7 @@ public class CodificaPractica {
 			tiempo_inicial = System.currentTimeMillis();
 			criptaLink.crypta(clave,sal);
 			duracion = System.currentTimeMillis() - tiempo_inicial;
-			array.add((double) duracion/100);
+			array.add((double) duracion);
 			tiempoPromedio+=duracion;//Se van acumulando todas las duraciones para dividirlas despues por el numero de iteraciones
 			if(duracion < mejorCaso) {
 				mejorCaso = duracion;// Si el tiempo de esta iteracion es menor al del mejor caso se establece como mejor caso
@@ -69,19 +69,19 @@ public class CodificaPractica {
 	 * @return valor calculado
 	 */
 	public double retornaMejorCaso() {
-		return mejorCaso/100;
+		return mejorCaso;
 	}
 	
 	public double retornaPeorCaso() {
-		return peorCaso/100;
+		return peorCaso;
 	}
 	
 	public double retornaTiempoPromedio() {
-		return tiempoPromedio/100;
+		return tiempoPromedio;
 	}
 	
 	public double retornaDesviacionEstandar() {
-		return mejorCaso/100;
+		return desviacionEstandar;
 	}
 	
 	public double retornaPercentil99() {
