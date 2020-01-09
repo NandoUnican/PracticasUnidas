@@ -1,5 +1,8 @@
 package dominio;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Tarjeta extends MetodoPago{
 	
 	private String numero;
@@ -35,4 +38,7 @@ public class Tarjeta extends MetodoPago{
 	public void setTitular(String titular) {
 		this.titular=titular;
 	}
+	
+	// Constructor vacio
+	public Tarjeta() {}
 }

@@ -4,13 +4,26 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Usuarios")
 public class Usuario implements Serializable{
+	@Id
 	private long id;
 	private String nombre;
 	private String email;
 	private String contraseña;
+	//@Embedded
 	private List<MetodoPago> metodosPago;
+	@OneToMany(mappedBy="propietario", fetch=FetchType.EAGER)
 	private List<Vehiculo> vehiculos;
+	@OneToMany(mappedBy="usuario", fetch=FetchType.EAGER)
 	private List<Denuncia> denunciasEnVigor;
 	
 	public Usuario(String nombre, String email, String contraseña) {
@@ -73,4 +86,7 @@ public class Usuario implements Serializable{
 	public long getId() {
 		return id;
 	}
+	
+	//Constructor vacio
+	public Usuario() {}
 }

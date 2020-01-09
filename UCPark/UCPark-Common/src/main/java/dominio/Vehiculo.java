@@ -4,13 +4,30 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Vehiculos")
 public class Vehiculo implements Serializable {
+	@Id
 	private long id;
 	private String matricula;
 	private String marca;
 	private String modelo;
+	@ManyToOne
+	@JoinColumn(name="usuario_fk")
 	private Usuario propietario;
+	@OneToOne
+	@JoinColumn(name="estacionamientoEnVigor_fk")
 	private Estacionamiento estacionamientoEnVigor;
+	@OneToMany(mappedBy="vehiculoDenunciado", fetch=FetchType.EAGER)
 	private List<Denuncia> denuncias;
 	
 	public Vehiculo (String matricula, String marca, String modelo) {
@@ -73,4 +90,7 @@ public class Vehiculo implements Serializable {
 	public long getId() {
 		return id;
 	}
+	
+	//Constructor vacio
+	public Vehiculo() {}
 }

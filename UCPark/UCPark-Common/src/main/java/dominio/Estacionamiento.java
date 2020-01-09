@@ -3,12 +3,23 @@ package dominio;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Estacionamientos")
 public class Estacionamiento implements Serializable{
+	@Id
 	private long id;
 	private Double importe;
 	private int minutos;
 	private Date horaInicio;
 	private boolean finalizado;
+	@OneToOne
+	@JoinColumn(name="vehiculo_fk")
 	private Vehiculo vehiculo;
 	
 	public Estacionamiento(Double importe, int minutos, Date horaInicio, Vehiculo vehiculo) {
@@ -62,4 +73,7 @@ public class Estacionamiento implements Serializable{
 	public long getId() {
 		return id;
 	}
+	
+	//Constructor vacio
+	public Estacionamiento() {}
 }

@@ -3,12 +3,25 @@ package dominio;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Denuncias")
 public class Denuncia implements Serializable{
+	@Id
 	private long id;
 	private Date fecha;
 	private Double importe;
 	private String causa;
+	@ManyToOne
+	@JoinColumn(name="vehiculoDenunciado_fk")
 	private Vehiculo vehiculoDenunciado;
+	@ManyToOne
+	@JoinColumn(name="usuario_fk")
 	private Usuario usuario;
 	
 	public Denuncia(Date fecha, Double importe, String causa, Vehiculo vehiculoDenunciado, Usuario usuario) {
@@ -62,4 +75,7 @@ public class Denuncia implements Serializable{
 	public long getId() {
 		return id;
 	}
+	
+	//Constructor vacio
+	public Denuncia() {}
 }

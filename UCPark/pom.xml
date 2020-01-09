@@ -32,5 +32,6 @@
   	<module>UCPark-Common</module>
   	<module>UCPark-Business</module>
   	<module>UCPark-DAO</module>
+  	<module>UCPark-EAR</module>
   </modules>
 </project>

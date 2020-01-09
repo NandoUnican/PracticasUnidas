@@ -5,12 +5,12 @@
 		<jta-data-source>jdbc/UCPark</jta-data-source>
 		
 		
-		<class>domain.Denuncia</class>
-		<class>domain.Estacionamiento</class>
-		<class>domain.MetodoPago</class>
-		<class>domain.Tarjeta</class>
-		<class>domain.Usuario</class>
-		<class>domain.Vehiculo</class>
+		<class>dominio.Denuncia</class>
+		<class>dominio.Estacionamiento</class>
+		<class>dominio.MetodoPago</class>
+		<class>dominio.Tarjeta</class>
+		<class>dominio.Usuario</class>
+		<class>dominio.Vehiculo</class>
 				
 		<properties>
 			<property name="eclipselink.ddk-generation" value="create-or-extend-tables"/>
