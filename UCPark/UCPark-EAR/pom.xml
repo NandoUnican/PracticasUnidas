@@ -16,7 +16,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
-		<!-- En las dependencias de tipo librería, que no sean ejb ni webno hay 
+		<!-- En las dependencias de tipo librería, que no sean ejb ni web no hay 
 			que indicar el tipo -->
 		<dependency>
 			<groupId>es.unican.ps</groupId>
