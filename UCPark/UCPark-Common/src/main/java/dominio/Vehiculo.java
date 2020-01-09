@@ -69,4 +69,8 @@ public class Vehiculo implements Serializable {
 	public void setDenuncias(List<Denuncia> denuncias) {
 		this.denuncias=denuncias;
 	}
+	
+	public long getId() {
+		return id;
+	}
 }

@@ -30,5 +30,7 @@
 	</dependencies>
   <modules>
   	<module>UCPark-Common</module>
+  	<module>UCPark-Business</module>
+  	<module>UCPark-DAO</module>
   </modules>
 </project>

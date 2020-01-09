@@ -69,4 +69,8 @@ public class Usuario implements Serializable{
 	public void setMestodosPago(List<MetodoPago> metodosPago) {
 		this.metodosPago=metodosPago;
 	}
+	
+	public long getId() {
+		return id;
+	}
 }

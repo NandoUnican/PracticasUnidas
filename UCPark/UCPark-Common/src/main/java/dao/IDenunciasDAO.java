@@ -13,6 +13,6 @@ public interface IDenunciasDAO {
 	public Denuncia denunciaPorId(long id);
 	public Denuncia creaDenuncia(Denuncia denuncia);
 	public Denuncia actualizaDenuncia(Denuncia denuncia);
-	public Denuncia eliminaDenuncia(Denuncia denuncia);
+	public Denuncia eliminaDenuncia(long id);
 	
 }

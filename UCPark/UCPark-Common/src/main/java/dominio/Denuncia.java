@@ -58,4 +58,8 @@ public class Denuncia implements Serializable{
 	public void setUsuario(Usuario usuario) {
 		this.usuario=usuario;
 	}
+	
+	public long getId() {
+		return id;
+	}
 }

@@ -10,8 +10,9 @@ import dominio.Estacionamiento;
 public interface IEstacionamientosDAO {
 	
 	public List<Estacionamiento> estacionamientos();
+	public List<Estacionamiento> estacionamientosEnVigor();
 	public Estacionamiento estacionamientoPorId(long id);
 	public Estacionamiento creaEstacionamiento(Estacionamiento estacionamiento);
 	public Estacionamiento actualizaEstacionamiento(Estacionamiento estacionamiento);
-	public Estacionamiento eliminaEstacionamiento(Estacionamiento estacionamiento);
+	public Estacionamiento eliminaEstacionamiento(long id);
 }

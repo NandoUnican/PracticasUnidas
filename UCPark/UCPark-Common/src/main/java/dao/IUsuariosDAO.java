@@ -13,6 +13,6 @@ public interface IUsuariosDAO {
 	public Usuario usuarioPorId(long id);
 	public Usuario creaUsuario(Usuario usuario);
 	public Usuario actualizaUsuario(Usuario usuario);
-	public Usuario eliminaUsuario(Usuario usuario);
+	public Usuario eliminaUsuario(long id);
 	
 }

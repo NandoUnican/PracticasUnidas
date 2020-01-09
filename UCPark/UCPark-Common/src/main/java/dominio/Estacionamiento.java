@@ -58,4 +58,8 @@ public class Estacionamiento implements Serializable{
 	public void setFechaEntrada(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
+	
+	public long getId() {
+		return id;
+	}
 }

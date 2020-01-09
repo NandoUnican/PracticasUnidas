@@ -7,7 +7,7 @@ import dominio.Vehiculo;
 @Remote
 public interface IVehiculos {
 	
-	public boolean registraVehiculo(String matricula);
-	public boolean eliminarVehiculo(String matricula);
+	public Vehiculo registraVehiculo(Vehiculo v);
+	public Vehiculo eliminarVehiculo(Vehiculo v);
 	
 }

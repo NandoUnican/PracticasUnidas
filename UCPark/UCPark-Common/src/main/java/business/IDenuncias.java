@@ -9,7 +9,8 @@ import dominio.Denuncia;
 @Remote
 public interface IDenuncias {
 	
-	public List<Denuncia> consultaDenuncias();
-	public boolean denunciar(Denuncia d);
+	public List<Denuncia> consultaDenuncias(int idUsuario);
+	public Denuncia denunciar(Denuncia d);
+	public Denuncia anularDenuncia(Denuncia d);
 	
 }
