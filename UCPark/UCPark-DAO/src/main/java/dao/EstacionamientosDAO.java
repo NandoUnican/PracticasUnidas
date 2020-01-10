@@ -31,10 +31,11 @@ public class EstacionamientosDAO implements IEstacionamientosDAO{
 	}
 
 	public Estacionamiento estacionamientoPorId(long id) {
-		Query getEstacionamientoPorId=em.createQuery("Select e FROM Estacionamiento e WHERE e.id = :id");
+		/*Query getEstacionamientoPorId=em.createQuery("Select e FROM Estacionamiento e WHERE e.id = :id");
 		getEstacionamientoPorId.setParameter("id", id);
 		Estacionamiento estacionamiento= (Estacionamiento) getEstacionamientoPorId.getSingleResult();
-		return estacionamiento;
+		return estacionamiento;*/
+		return em.find(Estacionamiento.class, id);
 	}
 
 	public Estacionamiento creaEstacionamiento(Estacionamiento estacionamiento) {
@@ -61,4 +62,7 @@ public class EstacionamientosDAO implements IEstacionamientosDAO{
 		}
 	}
 
+	public void setEntityManager(EntityManager em) {
+		this.em=em;
+	}
 }

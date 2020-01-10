@@ -16,8 +16,6 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
-		<!-- En las dependencias de tipo librería, que no sean ejb ni web no hay 
-			que indicar el tipo -->
 		<dependency>
 			<groupId>es.unican.ps</groupId>
 			<artifactId>UCPark-DAO</artifactId>
@@ -42,7 +40,15 @@
 
 	<build>
 		<plugins>
-			
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
@@ -60,8 +66,6 @@
 							<groupId>es.unican.ps</groupId>
 							<artifactId>UCPark-DAO</artifactId>
 						</ejbModule>
-						<!-- Este módulo es solo una librería, se añade como jarModule de modoque 
-							se añade a la carpeta lib del ear -->
 						<jarModule>
 							<groupId>es.unican.ps</groupId>
 							<artifactId>UCPark-Common</artifactId>
@@ -100,10 +104,6 @@
 					<terse>false</terse>
 					<echo>true</echo>
 				</configuration>
-				<!-- Este apartado une deploy/undeploy a las fases package/clean -->
-				<!-- <executions> <execution> <id>gf-undeploy</id> <goals> <goal>undeploy</goal></goals> 
-					<phase>clean</phase> </execution> <execution> <id>gf-deploy</id><goals> <goal>deploy</goal> 
-					</goals> <phase>package</phase> </execution></executions> -->
 			</plugin>
 
 		</plugins>

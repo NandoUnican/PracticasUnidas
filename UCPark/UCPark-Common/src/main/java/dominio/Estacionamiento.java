@@ -66,12 +66,16 @@ public class Estacionamiento implements Serializable{
 		return vehiculo;
 	}
 
-	public void setFechaEntrada(Vehiculo vehiculo) {
+	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
 	
 	public long getId() {
 		return id;
+	}
+	
+	public void setId(long id) {
+		this.id=id;
 	}
 	
 	//Constructor vacio

@@ -60,5 +60,9 @@ public class VehiculoDAO implements IVehiculosDAO {
 			return v;
 		}
 	}
+	
+	public void setEntityManager(EntityManager em) {
+		this.em=em;
+	}
 
 }

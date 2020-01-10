@@ -8,6 +8,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,7 +20,8 @@ public class Usuario implements Serializable{
 	private String nombre;
 	private String email;
 	private String contraseña;
-	//@Embedded
+	@OneToMany
+	@JoinColumn(name="pagos_fk")
 	private List<MetodoPago> metodosPago;
 	@OneToMany(mappedBy="propietario", fetch=FetchType.EAGER)
 	private List<Vehiculo> vehiculos;
@@ -85,6 +87,10 @@ public class Usuario implements Serializable{
 	
 	public long getId() {
 		return id;
+	}
+	
+	public void setId(long id) {
+		this.id=id;
 	}
 	
 	//Constructor vacio
