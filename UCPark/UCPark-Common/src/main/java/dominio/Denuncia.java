@@ -8,12 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="Denuncias")
 public class Denuncia implements Serializable{
 	@Id
 	private long id;
+	@Transient
 	private Date fecha;
 	private Double importe;
 	private String causa;
@@ -60,7 +62,7 @@ public class Denuncia implements Serializable{
 		return vehiculoDenunciado;
 	}
 
-	public void setFechaEntrada(Vehiculo vehiculoDenunciado) {
+	public void setVehiculoDenunciado(Vehiculo vehiculoDenunciado) {
 		this.vehiculoDenunciado = vehiculoDenunciado;
 	}
 	

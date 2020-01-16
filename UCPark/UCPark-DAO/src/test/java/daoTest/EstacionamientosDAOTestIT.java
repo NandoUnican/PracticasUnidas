@@ -17,7 +17,7 @@ import dominio.Estacionamiento;;
 public class EstacionamientosDAOTestIT {
 	private static EJBContainer ec;
 	private static IEstacionamientosDAO f;
-	
+	/*
 	@BeforeClass
 	public static void initContainer() throws Exception {
 		Map properties = new HashMap();
@@ -46,4 +46,5 @@ public class EstacionamientosDAOTestIT {
 	public void TestI2b() {
 		assertTrue(f.estacionamientoPorId(10)==null);
 	}
+	*/
 }

@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="Estacionamientos")
@@ -16,6 +17,7 @@ public class Estacionamiento implements Serializable{
 	private long id;
 	private Double importe;
 	private int minutos;
+	@Transient
 	private Date horaInicio;
 	private boolean finalizado;
 	@OneToOne
@@ -80,4 +82,12 @@ public class Estacionamiento implements Serializable{
 	
 	//Constructor vacio
 	public Estacionamiento() {}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Estacionamiento other = (Estacionamiento) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
 }

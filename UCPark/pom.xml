@@ -26,6 +26,13 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- Dependencias pruebas integración con contenedor embebido -->
+		<dependency>
+			<groupId>org.glassfish.main.extras</groupId>
+			<artifactId>glassfish-embedded-all</artifactId>
+			<version>4.1</version>
+			<scope>test</scope>
+		</dependency>
 		
 	</dependencies>
   <modules>
