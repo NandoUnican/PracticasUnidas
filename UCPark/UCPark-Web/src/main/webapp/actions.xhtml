@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" lang="es" xml:lang="es">
+  <h:head>
+    <meta charset="UTF-8">
+    <title>Seleccionar acción</title>
+    <style media="screen">
+      .actionArea{
+        padding: 20px;
+        border: solid 3px #0ab3b3;
+        width: fit-content;
+      }
+      button{
+        margin-bottom: 3px;
+        width: -webkit-fill-available;
+        position: relative;
+      }
+
+    </style>
+  </h:head>
+  <h:body>
+    <h:div class="actionArea">
+      <h:button id="verEstacionamientos" type="button" name="verEstacionamientos">Ver estacionamientos</h:button><br>
+      <h:button id="verPerfil" type="button" name="verPerfil">Ver perfil</h:button><br>
+      <h:button id="nuevoEstacionamiento" type="button" name="nuevoEstacionamiento" onclick="window.location.href = 'nuevoEstacionamiento.html';">Nuevo Estacionamiento</h:button><br>
+      <h:button id="verDenuncias" type="button" name="verDenuncias">Ver denuncias</h:button>
+    </h:div>
+  </h:body>
+</html>

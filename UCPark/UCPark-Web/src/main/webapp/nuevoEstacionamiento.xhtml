@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" lang="es" xml:lang="es">
+  <h:head>
+    <meta charset="UTF-8">
+    <title>Seleccionar acción</title>
+    <style media="screen">
+      .creationArea{
+        padding: 20px;
+        border: solid 3px #0ab3b3;
+        width: fit-content;
+      }
+      label{
+        display: inline-block;
+        float: left;
+        width: 62px;
+      }
+      input, select{
+        margin-left: 5px;
+      }
+      select{
+        width: 175px;
+      }
+      .submitEstacionamiento{
+        position: relative;
+        left: 40px;
+      }
+    </style>
+  </h:head>
+  <h:body>
+      <h:div class="creationArea">
+        <h:form class="formularioCreacion" action="result.html" method="post">
+          <h:div class="eligeVehiculo">
+            <h:label for="desplegableVehiculo">Vehiculo</h:label>
+            <h:select id="desplegableVehiculo" name="desplegableVehiculo" required>
+              <h:option value="value1">Hay que añadir un</h:option>
+              <h:option value="value1">Bucle para añadir los</h:option>
+              <h:option value="value1">Resultados del usuario</h:option>
+            </h:select>
+          </h:div>
+          <h:div class="aniadeMinutos">
+            <h:label for="inputMinutos">Minutos</h:label>
+            <h:input id="inputMinutos" type="number" name="inputMinutos" required>
+          </h:div>
+          <h:input type="submit" class="submitEstacionamiento" name="submitEstacionamiento" value="Crear Estacionamiento">
+        </h:form>
+      </h:div>
+  </h:body>
+</html>

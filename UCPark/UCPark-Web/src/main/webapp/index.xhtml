@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" lang="es" xml:lang="es">
+  <h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <title>Inicio de sesión Estacionamiento</title>
+    <style media="screen">
+      .formArea{
+        padding: 20px;
+        border: solid 3px #0ab3b3;
+        width: fit-content;
+      }
+      label{
+        display: inline-block;
+        float: left;
+        width: 75px;
+      }
+      input{
+        margin-left: 5px;
+      }
+      .nameArea{
+        position: relative;
+        margin-bottom: 4px;
+      }
+      .passwordArea{
+        position: relative;
+        margin-bottom: 4px;
+      }
+      #submit{
+        position: relative;
+        left: 100px
+      }
+    </style>
+  </h:head>
+  <h:body>
+    <h:div class="formArea">
+      <h:form class="formularioEstacionamiento" action="actions.html" method="post">
+        <h:div class="nameArea">
+          <h:label for="submitName">Usuario</h:label>
+          <h:input id="submitName" type="text" name="userName" placeholder="Nombre de usuario" required="true"/>
+        </h:div>
+        <h:div class="passwordArea">
+          <h:label for="submitPassword">Contraseña</h:label>
+          <h:input id="submitPassword" type="password" name="password" placeholder="Contraseña" required="true"/>
+        </h:div>
+        <h:input id="submit" type="submit" name="submitButton" value="Entrar"/>
+      </h:form>
+    </h:div>
+  </h:body>
+</html>
