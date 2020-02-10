@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>es.unican.ps</groupId>
+	<artifactId>ImpuestoCirculacionDAO</artifactId>
+	<version>0.0.1</version>
+
+
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>es.unican.ps</groupId>
+			<artifactId>ImpuestoCirculacionCommon</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.easytesting/fest-swing -->
+		<dependency>
+			<groupId>org.easytesting</groupId>
+			<artifactId>fest-swing</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                     <!-- Este valor es necesario para que ejecute de
+                       manera correcta varios test seguidos-->
+                    <forkMode>perTest</forkMode>
+                   <!--  <jvm>C:\Program Files\Java\jdk1.8.0_66\bin\java</jvm>   -->
+                 </configuration>
+                 <executions>
+                    <execution>
+                         <goals>
+                            <goal>integration-test</goal>
+                             <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+             </plugin> 
+		</plugins>
+</build>
+
+</project>

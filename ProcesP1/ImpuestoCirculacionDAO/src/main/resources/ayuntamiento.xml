@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ayuntamiento xmlns="http://www.unican.es/ps/ImpuestoCirculacion">
+	<contribuyente nombre="Alba" apellido1="Muñiz" apellido2="Revuelta"
+		dni="72345121A">
+		<turismo potencia="11.0" matricula="3441DDB"
+			fecha1Matriculacion="2009-01-01+01:00" />
+		<motocicleta cilindrada="1200" matricula="1232HHT"
+			fecha1Matriculacion="2012-11-12+01:00" />
+	</contribuyente>
+	<contribuyente nombre="Pepito" apellido1="Grillo"
+		apellido2="Saltamontes" dni="71345631P">
+		<turismo potencia="22.0" matricula="3247BBD"
+			fecha1Matriculacion="2005-01-01+01:00" />
+		<motocicleta cilindrada="1200" matricula="9224HGH"
+			fecha1Matriculacion="2012-05-22+02:00" />
+		<furgoneta potencia="15.0" comercial="true" matricula="3680DBD"
+			fecha1Matriculacion="2014-01-01+01:00" />
+	</contribuyente>
+	<contribuyente nombre="Aitor" apellido1="Menta"
+		apellido2="Perez" dni="71674631F">
+		<turismo potencia="3.0" matricula="7847GGD"
+			fecha1Matriculacion="2012-11-01+01:00" />
+		<motocicleta cilindrada="250" matricula="9147HDD"
+			fecha1Matriculacion="2009-05-22+02:00" />
+		<turismo potencia="19.0" matricula="4893DBD"
+			fecha1Matriculacion="2011-01-01+01:00" />
+	</contribuyente>
+	<contribuyente nombre="Amador" apellido1="Rivas"
+		apellido2="Cobo" dni="78934831M">
+		<turismo potencia="17.0" matricula="9424BGD"
+			fecha1Matriculacion="2004-12-01+01:00" />
+		<motocicleta cilindrada="600" matricula="1687HGD"
+			fecha1Matriculacion="2011-05-12+02:00" />
+	</contribuyente>
+	<contribuyente nombre="Jorge" apellido1="Marquez"
+		apellido2="Pedrosa" dni="73951831H">
+		<motocicleta cilindrada="120" matricula="1237HTD"
+			fecha1Matriculacion="2009-03-11+01:00" />
+		<motocicleta cilindrada="500" matricula="2807GFT"
+			fecha1Matriculacion="2014-05-18+02:00" />
+	</contribuyente>
+	<contribuyente nombre="Segismundo" apellido1="Lopez"
+		apellido2="Revuelta" dni="78493121S">
+		<furgoneta potencia="12.0" comercial="false" matricula="3543DDF"
+			fecha1Matriculacion="2008-06-01+02:00" />
+		<motocicleta cilindrada="200" matricula="1707BBG"
+			fecha1Matriculacion="2003-07-06+02:00" />
+	</contribuyente>
+</ayuntamiento>

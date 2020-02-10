@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.unican.es/ss/ImpuestoCirculacionCommon"
+xmlns:tns="http://www.unican.es/ss/ImpuestoCirculacionCommon" elementFormDefault="qualified">
+	<xs:simpleType name="tipoDni">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{8}[A-Z]{1}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tipoMatricula">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{4}[A-Z]{3}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="Vehiculo">
+		<xs:attribute name="matricula" type="tns:tipoMatricula" use="required"></xs:attribute>
+		<xs:attribute name="date" type="xs:date" use="required"></xs:attribute>	
+	</xs:complexType>
+	<xs:complexType name="Turismo">
+		<xs:complexContent>
+			<xs:extension base="tns:Vehiculo">
+				<xs:attribute name="potencia" type="xs:double" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Furgoneta">
+		<xs:complexContent>
+			<xs:extension base="tns:Vehiculo">
+				<xs:attribute name="potencia" type="xs:double" use="required"/>
+				<xs:attribute name="comercial" type="xs:boolean" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Motocicleta">
+		<xs:complexContent>
+			<xs:extension base="tns:Vehiculo">
+				<xs:attribute name="cilindrada" type="xs:integer" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Contribuyente">
+		<xs:sequence>
+			<xs:element name="vehiculo" type="tns:Vehiculo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="nombre" type="xs:string" use="required"/>
+		<xs:attribute name="apellido1" type="xs:string" use="required"/>
+		<xs:attribute name="apellido2" type="xs:string" use="required"/>
+		<xs:attribute name="dni" type="tns:tipoDni" use="required"/>
+	</xs:complexType>
+	
+	<xs:element name="ayuntamiento">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element type="tns:Contribuyente" name="contribuyentes"/>
+				<xs:element type="tns:Vehiculo" name="vehiculos"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
