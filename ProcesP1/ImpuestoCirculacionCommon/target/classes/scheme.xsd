@@ -13,6 +13,10 @@ xmlns:tns="http://www.unican.es/ss/ImpuestoCirculacionCommon" elementFormDefault
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:complexType name="Factura">
+		<xs:attribute name="date" type="xs:date" use="required"/>
+		<xs:attribute name="cobro" type="xs:double" use="required"/>
+	</xs:complexType>
 	<xs:complexType name="Vehiculo">
 		<xs:attribute name="matricula" type="tns:tipoMatricula" use="required"></xs:attribute>
 		<xs:attribute name="date" type="xs:date" use="required"></xs:attribute>	
@@ -42,6 +46,7 @@ xmlns:tns="http://www.unican.es/ss/ImpuestoCirculacionCommon" elementFormDefault
 	<xs:complexType name="Contribuyente">
 		<xs:sequence>
 			<xs:element name="vehiculo" type="tns:Vehiculo" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="historicovehiculo" type="tns:Vehiculo" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="nombre" type="xs:string" use="required"/>
 		<xs:attribute name="apellido1" type="xs:string" use="required"/>
@@ -51,10 +56,6 @@ xmlns:tns="http://www.unican.es/ss/ImpuestoCirculacionCommon" elementFormDefault
 	
 	<xs:element name="ayuntamiento">
 		<xs:complexType>
-			<xs:choice maxOccurs="unbounded">
-				<xs:element type="tns:Contribuyente" name="contribuyentes"/>
-				<xs:element type="tns:Vehiculo" name="vehiculos"/>
-			</xs:choice>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

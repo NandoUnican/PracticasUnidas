@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tns:ayuntamiento xmlns:tns="http://www.example.org/ss/impuestoCirculacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ss/impuestoCirculacion ../../../../../ImpuestoCirculacionDAO/src/main/resources/ImpuestoCirculacion.xsd "> 
   <tns:contribuyente Apellido1="Pepitez" Apellido2="Pepitez" Nombre="Pepe" dni="11111111A">
-  	<tns:turismo Matricula="3333KLM" Date="2020-12-12" Potencia="19"/>
-  	<tns:turismo Matricula="4444NOP" Date="2020-08-08" Potencia="21"/>
+  	<vehiculo xsi:type="tns:turismo" Matricula="3333KLM" Date="2020-12-12" Potencia="19"/>
+  	<historicovehiculo xsi:type="tns:turismo" Matricula="4444NOP" Date="2020-08-08" Potencia="21"/>
   </tns:contribuyente>
   <tns:contribuyente Apellido1="Pepitez" Apellido2="Pepitez" Nombre="Pepo" dni="22222222B">
-  	<tns:turismo Matricula="9999ABC" Date="2020-09-09" Potencia="5"/>
-  	<tns:furgoneta Matricula="1111EFG" Date="2020-10-10" Potencia="10" Comercial="False"/>
-  	<tns:motocicleta Matricula="5555AAA" Date="2020-11-11" Cilindrada="100"/>
+  	<vehiculo xsi:type="tns:turismo" Matricula="9999ABC" Date="2020-09-09" Potencia="5"/>
+  	<vehiculo xsi:type="tns:furgoneta" Matricula="1111EFG" Date="2020-10-10" Potencia="10" Comercial="False"/>
+  	<vehiculo xsi:type="tns:motocicleta" Matricula="5555AAA" Date="2020-11-11" Cilindrada="100"/>
   </tns:contribuyente>
   <tns:contribuyente Apellido1="Pepitez" Apellido2="Pepitez" Nombre="Lola" dni="33333333C">
-  	<tns:furgoneta Matricula="2222HIJ" Date="2020-11-11" Potencia="15" Comercial="True"/>
-  	<tns:motocicleta Matricula="6666BBB" Date="2019-12-11" Cilindrada="200"/>
+  	<historicovehiculo xsi:type="tns:furgoneta" Matricula="2222HIJ" Date="2020-11-11" Potencia="15" Comercial="True"/>
+  	<historicovehiculo xsi:type="tns:motocicleta" Matricula="6666BBB" Date="2019-12-11" Cilindrada="200"/>
   </tns:contribuyente>
   <tns:contribuyente Apellido1="Pepitez" Apellido2="Pepitez" Nombre="Lolo" dni="44444444D">
-  	<tns:motocicleta Matricula="7777CCC" Date="2019-12-11" Cilindrada="400"/>
-  	<tns:motocicleta Matricula="8888DDD" Date="2019-12-11" Cilindrada="700"/>
-  	<tns:motocicleta Matricula="9999EEE" Date="2019-12-11" Cilindrada="1200"/>
+  	<vehiculo xsi:type="tns:motocicleta" Matricula="7777CCC" Date="2019-12-11" Cilindrada="400"/>
+  	<historicovehiculo xsi:type="tns:motocicleta" Matricula="8888DDD" Date="2019-12-11" Cilindrada="700"/>
+  	<historicovehiculo xsi:type="tns:motocicleta" Matricula="9999EEE" Date="2019-12-11" Cilindrada="1200"/>
   </tns:contribuyente>
   <tns:contribuyente Apellido1="El" Apellido2="Magias" Nombre="Gerardo" dni="55555555E"/>
 </tns:ayuntamiento>

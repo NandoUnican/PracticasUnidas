@@ -12,13 +12,6 @@ public class Ayuntamiento {
 	@XmlIDREF
 	@XmlElement(name = "contribuyentes", type = Contribuyente.class)
 	private List<Contribuyente>contribuyentes;
-	@XmlIDREF
-	@XmlElements({
-        @XmlElement(name = "turismo", type = Turismo.class),
-        @XmlElement(name = "furgoneta", type = Furgoneta.class),
-        @XmlElement(name = "motocicleta", type = Motocicleta.class)
-    })
-	private List<Vehiculo>vehiculos;
 	
 	public Ayuntamiento() {}
 	

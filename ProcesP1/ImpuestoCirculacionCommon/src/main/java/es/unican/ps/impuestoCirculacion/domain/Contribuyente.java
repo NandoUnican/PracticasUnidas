@@ -49,13 +49,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Contribuyente {
 
-    @XmlElements({
-        @XmlElement(name = "turismo", type = Turismo.class),
-        @XmlElement(name = "furgoneta", type = Furgoneta.class),
-        @XmlElement(name = "motocicleta", type = Motocicleta.class)
-    })
-    @XmlIDREF
+ 
+    @XmlElement(name = "vehiculo")
     private List<Vehiculo> vehiculos;
+    @XmlElement(name = "historicovehiculo")
+    private List<Vehiculo> historicovehiculos;
     @XmlAttribute(required = true)
     private String nombre;
     @XmlAttribute(required = true)
